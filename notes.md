@@ -89,7 +89,30 @@
 
 ## Chap 13 Functional Language: Iterators + Closures
 
-hol up, my entire college education has amalgamated to this point
+hol up, my entire college education has amalgamated to this point :0
 
+13.1 Anonymous Functions
 
-## chap 14 
+- closures have envs
+- you don't need to annotate type in closure because complier can infer
+- closures: take ownership, borrow mutably, and borrow immutable
+  - FnOnce: closure takes ownership of env (called only once)
+  - FnMut: borrows mutably (change env)
+  - Fn: borrow immutably
+- `move` forces ownership
+
+13.2 Iterators
+
+- iterators are lazy!
+  - great error message that it tells you that! :D
+- they get immutable references
+- std lib contains the normal kind of functions
+
+13.3 I/0 Project
+
+- functional programming prefers minimize amount of mutable state!
+- rust's closures and iterators are inspired by functional programming
+
+## chap 14 cargo + crates.io
+
+- 

@@ -115,4 +115,28 @@ hol up, my entire college education has amalgamated to this point :0
 
 ## chap 14 cargo + crates.io
 
-- 
+14.1 Builds and Release Profiles
+
+- diff levels for optimizations 0 - 3
+
+14.2 Publishing Crates
+
+- three slashes (`///`) creates documentation comments -> gen html
+- `cargo doc --open` builds html docs
+- add examples please!
+- `//!` for adding comments to documentation
+- `pub use` instead of re-exporting items to publicize structure
+- woo published a create
+- you can `cargo yank`
+
+14.3 Cargo workspaces
+
+- sharing targets, avoid unnecessary rebuilding
+
+14.4 install binaries
+
+- `cargo install` make sure it's on your PATH
+
+14./5 custom commands
+
+- you can create them

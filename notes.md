@@ -140,3 +140,63 @@ hol up, my entire college education has amalgamated to this point :0
 14./5 custom commands
 
 - you can create them
+
+15 Smart Pointers
+
+- on the heap and they own them
+- `Deref` and `Drop`
+
+15.1 Box
+
+- size not known
+- transfer ownership without copy
+- care that the type implements a trait instead of being a specific type
+- recursive types: define itself in its size. Use a box! Because box has a size
+  - cons lists :0 but actually use a Vec<T>
+
+15.2 Deref Trait
+
+- `Deref` allows customize behavior of dereference *
+- you can make it just like normal reference
+- what does `self.0` mean? is 0 a special thing?
+- "deref coercion can convert &String to &str because String implements the Deref trait such that it returns str"
+  - ahh that makes sense
+- Rust will coerse a mutable reference into an immutable one  
+  - but you can't do the reverse
+- I'm not super sure on the `Target` key word
+
+15.3 Drop Trait
+
+- Drop is what happens when your smart pointer goes out of scope
+- if you want to drop early, use `std::mem:drop`
+  - call `drop(<var>)`
+
+15.4 Rc<T> Reference Counted
+
+- To have multiple ownership (graph exapmle), Rc<T> which is reference counting
+  - if multiple programs read, doesn't turn off until last finishes (single thread only)
+- use Rc::clone to increase reference count of the data
+  - not a deep copy
+- only immutable references, otherwise you break borrow checker
+
+15.5 RefCell
+
+- Interior mutability allows you to mutate when there are immutable references
+  - this would break borrow rules, so know what you're doing!
+- RefCell has single ownership over data
+  - ownership is enforced at runtime! not compile time like box (don't panic!)
+- single thread only
+- recap:
+  - Rc<T> multiple owners; Box<T> and RefCell<T> have single owners.
+  - Box<T> allows immutable or mutable borrows at compile time;
+  - Rc<T> allows only immutable at compile time;
+  - RefCell<T> allows immutable or mutable borrows checked at runtime.
+  - Because RefCell<T> allows mutable borrows at runtime, you can mutate the value inside the RefCell<T> even when the RefCell<T> is immutable.
+- you can do fun things when you break the rules ... kinda
+
+15.6 Reference Cycles
+
+- you can have memory leaks :(
+- RefCells with Rcs you can do it, but it's a little contrived
+- you can try to use Weak<T> 
+  - smart pointer type that doesn't have to have a 0 count to be cleaned

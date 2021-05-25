@@ -141,7 +141,7 @@ hol up, my entire college education has amalgamated to this point :0
 
 - you can create them
 
-15 Smart Pointers
+## 15 Smart Pointers
 
 - on the heap and they own them
 - `Deref` and `Drop`
@@ -200,3 +200,10 @@ hol up, my entire college education has amalgamated to this point :0
 - RefCells with Rcs you can do it, but it's a little contrived
 - you can try to use Weak<T> 
   - smart pointer type that doesn't have to have a 0 count to be cleaned
+
+16 Fearless Concurrency
+
+- Didn't take notes
+
+17 OOD
+

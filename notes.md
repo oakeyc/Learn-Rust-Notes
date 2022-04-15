@@ -24,7 +24,7 @@
 - I like that it calls out that it's like an interface
 - coherence, and more specifically the orphan rule: can't implement a trait for non local code
   - others can't break your code
-- Using a trait as  parameter is lit! with plus syntax!
+- Using a trait as parameter is lit! with plus syntax!
 - T has the trait bound Clone instead of Copy
   - how does clone work?
     - more extensive copy? clone can be implemented, but not copy
